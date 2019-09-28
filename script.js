@@ -6,7 +6,7 @@ function Charx()
     x= String.fromCharCode( Math.floor(Math.random() * 26) + 97);
     document.getElementById("test").innerHTML+=x; 
 }
-setInterval(function(){ Charx();}, 1000);
+setInterval(function(){ Charx();}, 2000);
 
 
 
