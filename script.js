@@ -1,23 +1,14 @@
 var char;
-var x = String.fromCharCode( Math.floor(Math.random() * 26) + 97);
-document.getElementById("test").innerHTML=x;
+var x ;
 
-/*$(function() {
-  var salt = Math.floor(Math.random() * 1000),
-    time;
+function Charx()
+{
+    x= String.fromCharCode( Math.floor(Math.random() * 26) + 97);
+    document.getElementById("test").innerHTML+=x; 
+}
+setInterval(function(){ Charx();}, 500);
 
-  function load_script() {
-    $('#myscript').remove();
-    $.getScript("src/to/file-with-your-custom-scripts.js?s=" + salt, function() {
-      $('script:last').attr('id', 'myscript');
-      salt = Math.floor(Math.random() * 1000);
-      time = setTimeout(function() {
-        load_script();
-      }, 30 * 1000);
-    });
-  }
-  load_script();
-});*/
+
 
 
 $(function(){
@@ -30,7 +21,7 @@ $(function(){
 
 function Test()
 {
-    if(x==char)
+    if(x[0]==char)
     {
         document.getElementById("test2").innerHTML="True";
     }
