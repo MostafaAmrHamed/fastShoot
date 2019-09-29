@@ -1,44 +1,40 @@
-var char;
-var x = new Array();
+var randomCharacter;
 var count = 0;
+var lives = 3;
 
 function Charx()
 {
-    x= String.fromCharCode( Math.floor(Math.random() * 26) + 97);
-    document.getElementById("test").innerHTML+=x;   
+    randomCharacter= String.fromCharCode( Math.floor(Math.random() * 26) + 97);
+    document.getElementById("gameBoard").innerHTML+=randomCharacter;   
 }
-setInterval(function(){ Charx();}, 2000);
+
 
 
 
 
 $(function(){
     $(window).keypress((e)=>{
-        char = String.fromCharCode(e.which);
-        Test();
+       var char = String.fromCharCode(e.which);
+       var gameBoard = document.getElementById("gameBoard").innerHTML;
+        if(gameBoard[0]==char)
+    {
+        document.getElementById("test2").innerHTML= ++count;
+        gameBoard = gameBoard.substring(1);
+        document.getElementById("gameBoard").innerHTML= gameBoard;
+    }
+    else
+    {
+        
+        lives = -1;
+        document.getElementById("test2").innerHTML= --count;
+    } 
     });
 });
 
 
-function Test()
-{
-    
-    if(x[0]==char)
-    {
-        count+=1;
-        document.getElementById("test2").innerHTML=count;
-        x.shift();
-    }
-    else
-    {
-        count-=1;
-        document.getElementById("test2").innerHTML=count;
-       /*if(live = 0)
-        {
-            alert("Hide!");
-            document.getElementById( 
-                "test").style.visibility = "hidden"; 
-        }*/
-    }
-}
+
+setInterval(function(){ Charx();}, 1000);
+
+
+
 
