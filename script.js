@@ -26,6 +26,7 @@ $(function(){
         {
             clearInterval(t);
             document.getElementById("score").innerHTML = "You Lost Your Score Was : " + count;
+            document.getElementById("gameBoard").innerHTML = "";
             return;
         }
 
