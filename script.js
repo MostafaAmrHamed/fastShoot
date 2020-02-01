@@ -25,7 +25,7 @@ $(function(){
         if(lives <0)
         {
             clearInterval(t);
-            document.getElementById("score").innerHTML = "You Lost Your Score Was : " + count;
+            document.getElementById("score").innerHTML = count;
             document.getElementById("gameBoard").innerHTML = "";
             return;
         }
